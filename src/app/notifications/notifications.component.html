@@ -1,0 +1,52 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Send Notification Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5>Send Notification</h5>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="notificationInput" class="form-label">Message</label>
+            <input
+              type="text"
+              id="notificationInput"
+              class="form-control"
+              placeholder="Enter notification message"
+              [(ngModel)]="notificationMessage"
+            />
+          </div>
+          <button class="btn btn-success" (click)="sendNotification()">Send Notification</button>
+          <div *ngIf="sendStatus" class="mt-2">
+            <div class="alert" [ngClass]="{
+                'alert-success': sendStatus === 'Notification sent successfully.',
+                'alert-danger': sendStatus.includes('Failed')
+              }">
+              {{ sendStatus }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Received Notifications Section -->
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <h5>Received Notifications</h5>
+        </div>
+        <div class="card-body">
+          <div *ngIf="notifications.length === 0; else notificationList">
+            <p class="text-muted">No notifications yet.</p>
+          </div>
+          <ng-template #notificationList>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let note of notifications">
+                <strong>{{ note.timestamp | date:'shortTime' }}:</strong> {{ note.message }}
+              </li>
+            </ul>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

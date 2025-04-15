@@ -1,0 +1,9 @@
+/* Styles for AuthComponent */
+div {
+  margin-bottom: 8px;
+}
+
+label {
+  display: inline-block;
+  width: 80px;
+}

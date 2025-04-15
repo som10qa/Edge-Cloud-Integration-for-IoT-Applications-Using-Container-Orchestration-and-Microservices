@@ -1,0 +1,13 @@
+/* Minimal styling adjustments */
+
+.card-header h5 {
+  margin: 0;
+}
+
+.alert {
+  padding: 0.5rem 1rem;
+}
+
+.list-group-item {
+  font-size: 0.95rem;
+}
