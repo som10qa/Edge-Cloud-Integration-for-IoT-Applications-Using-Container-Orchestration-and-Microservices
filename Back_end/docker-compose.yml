@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  service_sensor:
+    build: ./src/microservices/service_sensor
+    image: service_sensor
+    ports:
+      - "3000:3000"
+    restart: always
+
+  service_notification:
+    build: ./src/microservices/service_notification
+    image: service_notification
+    ports:
+      - "8080:8080"
+    restart: always
+
+  service_auth:
+    build: ./src/microservices/service_auth
+    image: service_auth
+    ports:
+      - "5000:5000"
+    restart: always

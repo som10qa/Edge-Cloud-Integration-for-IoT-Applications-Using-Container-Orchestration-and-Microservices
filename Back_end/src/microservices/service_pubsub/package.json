@@ -1,0 +1,12 @@
+{
+    "name": "service_pubsub",
+    "version": "1.0.0",
+    "description": "Pub-Sub Service for IoT Project",
+    "main": "pubsub.js",
+    "scripts": {
+      "start": "node pubsub.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }  

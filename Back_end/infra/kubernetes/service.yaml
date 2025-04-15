@@ -1,0 +1,26 @@
+# Service to expose all microservices under one LoadBalancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-cloud-service
+spec:
+  selector:
+    app: edge-cloud  # This selector must match the labels in your Deployment
+  ports:
+  - name: auth
+    protocol: TCP
+    port: 5000       # External port for service-auth
+    targetPort: 5000 # Container port for service-auth
+  - name: data
+    protocol: TCP
+    port: 3000       # External port for service-data (sensor service)
+    targetPort: 3000 # Container port for service-data
+  - name: notify
+    protocol: TCP
+    port: 8080       # External port for service-notification
+    targetPort: 8080 # Container port for service-notification
+  - name: pubsub
+    protocol: TCP
+    port: 4000       # External port for service-pubsub
+    targetPort: 4000 # Container port for service-pubsub
+  type: LoadBalancer  # Exposes the service externally via a cloud provider's load balancer

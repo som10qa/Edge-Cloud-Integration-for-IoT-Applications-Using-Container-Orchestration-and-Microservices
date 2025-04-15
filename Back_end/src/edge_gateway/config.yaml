@@ -1,0 +1,6 @@
+edge_gateway:
+  process_interval: 5
+  sensor_thresholds:
+    light_intensity: [100, 1000]
+    co2: [300, 1000]
+    humidity: [20, 80]

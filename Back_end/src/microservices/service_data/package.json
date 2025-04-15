@@ -1,0 +1,12 @@
+{
+    "name": "service_data",
+    "version": "1.0.0",
+    "description": "Data Management Service for IoT",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }  

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Data Simulator</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>IoT Data Simulator</h1>
+  <form id="dataForm">
+    <label for="lightIntensity">Light Intensity (lux):</label>
+    <input type="number" id="lightIntensity" name="lightIntensity" required><br>
+    
+    <label for="co2">CO₂ (ppm):</label>
+    <input type="number" id="co2" name="co2" required><br>
+    
+    <label for="humidity">Humidity (%):</label>
+    <input type="number" id="humidity" name="humidity" required><br>
+    
+    <button type="submit">Send Data</button>
+  </form>
+
+  <h2>Real-Time Sensor Data Updates</h2>
+  <div id="messages"></div>
+</body>
+</html>
